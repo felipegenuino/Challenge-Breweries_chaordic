@@ -1,3 +1,13 @@
+import Header from '../components/Header'
+import Filter from '../components/Filter'
+import Breweries from '../components/Breweries'
+
 export default function Home(){
-    return <h1> Home </h1>
+    return (
+        <div>
+            <Header />
+            <Filter />
+            <Breweries />
+        </div>
+    )
 }

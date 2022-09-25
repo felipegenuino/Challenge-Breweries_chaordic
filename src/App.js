@@ -1,17 +1,9 @@
-import './App.css';
-
-import Header from './components/Header'
-import Filter from './components/Filter'
-import Breweries from './components/Breweries'
-
-function App() {
+import React from "react";
+  
+import AppRoutes from "./routes"
+export default function App() {
   return (
-    <div className="App">
-      <Header />
-      <Filter />
-      <Breweries />
-    </div>
-  );
+    <AppRoutes />
+  )
 }
-
-export default App;
+ 
