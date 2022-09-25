@@ -4,6 +4,10 @@
   --background-header: #262324;
 }
 
+*, :after, :before {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -21,11 +25,103 @@ code {
 
 
 header{
-  background: var(--background-header);
+  background: #262324;
   color: #fff;
   padding: 50px 20px;
+  margin-bottom: 20px;
 }
-header h1 {margin-bottom: 10px; font-size: 2em; font-weight: 900 }
+header h1 {margin-bottom: 10px; font-size: 2.5em; font-weight: 900 }
 header h2 {margin: 0; font-size: 1.2em; font-weight: 400;}
 
  
+
+.filter{
+  padding: 20px 20px;
+
+}
+.filter strong{}
+.filter select {}
+
+.Breweries{  
+     padding: 20px 20px;
+  }
+.Breweries__list{
+  list-style:none; 
+  padding: 0; 
+  margin:0; 
+  width: 100%;
+  display: grid; 
+  grid-template-columns: 1fr; 
+  column-gap: 1em;
+  row-gap: 1em;
+}
+
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .Breweries__list{ 
+    grid-template-columns: 1fr 1fr;  
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  /* For desktop: */
+  .Breweries__list{ 
+    grid-template-columns: 1fr 1fr 1fr 1fr;  
+  }
+}
+
+.Breweries__listitem{   
+  display: initial;
+  margin:0;
+ }
+.Brewery-card{box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;   
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.Brewery-card__content{
+  padding: 30px 20px; 
+}
+.Brewery-card__title{ font-size: 2.5em; margin:0}
+.Brewery-card__info{ font-size: 1.1em; line-height: 1.8}
+.Brewery-card__footer{
+  border-top: 1px solid #5FCEB4;
+  padding: 10px 20px;
+}
+.Brewery-card__tag{
+  background: #5FCEB4;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 0.8em;
+}
+
+
+
+
+
+.pagination{ display: flex; justify-content: center;}
+.pagination__list{ list-style: none; display: flex; padding: 0}
+.pagination__item{}
+
+.pagination__link{
+    border: 1px solid #5FCEB4;
+    padding: 8px 14px;
+    display: flex;
+    margin-right: 5px;
+    border-radius: 5px;
+    /* background: var(--background-header); */
+    color: #262324;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+.pagination__link:hover{
+  opacity:0.9
+}
+
+.pagination__link.active{
+  background: #262324;
+  color: #fff;
+}
