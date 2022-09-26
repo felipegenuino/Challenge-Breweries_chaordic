@@ -141,12 +141,17 @@ header h2 {margin: 0; font-size: 1.2em; font-weight: 400;}
 }
 
 /* http://web-accessibility.carnegiemuseums.org/design/color/ */
-.Brewery-card__tag--large{background: rgb(49 115 220); color: #fff}
 .Brewery-card__tag--micro{background: #6C6C6C}
-.Brewery-card__tag--brewpub{ background: rgb(255 221 87); color: rgb(76 65 25)}
-.Brewery-card__tag--closed{background: #cd2026}
+.Brewery-card__tag--nano{background: #c50e29; color:#fff;}
 .Brewery-card__tag--regional{background: rgb(49 115 220)}
+.Brewery-card__tag--brewpub{ background: rgb(255 221 87); color: rgb(76 65 25)}
+.Brewery-card__tag--large{background: rgb(49 115 220); color: #fff}
+.Brewery-card__tag--planning{background: #6200ea; color: #fff;}
+.Brewery-card__tag--bar{background: #9eea35;}
 .Brewery-card__tag--contract{background: rgb(54 54 54)}
+.Brewery-card__tag--proprietor{background: #665f46; color: #fff;}
+.Brewery-card__tag--closed{background: #cd2026}
+
 
 
 .pagination{ display: flex; justify-content: center;}
