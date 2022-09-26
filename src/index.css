@@ -23,6 +23,10 @@ code {
     monospace;
 }
 
+.single{}
+.single__content{ padding: 50px}
+
+
 
 header{
   background: #262324;
@@ -80,12 +84,30 @@ header h2 {margin: 0; font-size: 1.2em; font-weight: 400;}
   height: 100%;
   display: flex;
   flex-direction: column;
+  position:relative;
 }
 .Brewery-card__content{
   padding: 30px 20px; 
 }
 .Brewery-card__title{ font-size: 2.5em; margin:0}
 .Brewery-card__info{ font-size: 1.1em; line-height: 1.8}
+
+.Brewery-card__list{ 
+  font-size: 1.1em; 
+  line-height: 1.8; 
+  list-style:none; 
+  padding:0
+}
+
+.Brewery-card__stretched-link{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
 .Brewery-card__footer{
   border-top: 1px solid #5FCEB4;
   padding: 10px 20px;

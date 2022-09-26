@@ -1,282 +1,36 @@
-export default function Breweries(){
+//https://api.openbrewerydb.org/breweries?per_page=3
 
-   
+import { useState, useEffect } from "react";
+import Brewery from "../../components/Brewery"
+
+ 
+export default function Breweries(){
+    const [data, setData] = useState(null);
+    
+    useEffect(() => {
+        fetch("https://api.openbrewerydb.org/breweries")
+        .then((response) => response.json())
+        .then((data) => setData(data));
+        
+    }, []);
+    
+    // console.log(data)
 
     return (
-        <section className="Breweries">
-            <ul className="Breweries__list">
-                <li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> Avondale Brewing Co </h3>
-                            <p  className="Brewery-card__info"> <span> 201 41s St S </span> <br /> Birmingham Alabama - 35222-1932  <br /> United States</p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                         </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li>
-                <li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li>
-                <li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li>
-                <li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li><li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li><li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li><li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li><li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li><li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li><li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li><li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li><li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li><li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li><li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li><li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li><li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li><li className="Breweries__listitem"> 
-                    <section className="Brewery-card">
-                        <div className="Brewery-card__content">
-                            <h3 className="Brewery-card__title"> name </h3>
-                            <span> street </span>
-                            <p> address_2 <br /> 
-                                address_3 <br /> 
-                                city <br /> 
-                                state state - phone
-                            </p> 
-                            <a href="#" className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></a>
-                        </div>
-                        <footer className="Brewery-card__footer">
-                            <span className="Brewery-card__tag"> brewery_type </span>
-                        </footer>
-                    </section>
-                </li>
-            </ul>
+        <section className="Breweries"> 
+
+{ data !== null ? 
+    <ul className="Breweries__list">
+        {data.map((brewery) => (
+            <Brewery 
+                key={brewery.id} 
+                props={brewery}
+                />
+        ))}  
+    </ul>
+    
+    : <h5> Loading Breweries </h5>}
+           
 
             <nav className="pagination"> 
                 <ul className="pagination__list">
