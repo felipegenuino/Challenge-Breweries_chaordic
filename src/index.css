@@ -200,16 +200,3 @@ header h2 {margin: 0; font-size: 1.2em; font-weight: 400;}
 }
 
 
-
-
-.loading{
-  display: flex;
-  min-height: 40vh;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  text-align: center
-}
-.loading__content{}
-.loading__content strong{ display: flex}
-.loading__content span{ font-size: 1.4em}

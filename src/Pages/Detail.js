@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {useParams, Link} from 'react-router-dom';
 
 import Header from '../components/Header'
+import Loading from '../components/Loading'
 
 export default function Detail(){
     const [data, setData] = useState(null);
@@ -59,12 +60,7 @@ function formatPhoneNumber(phoneNumberString) {
                  </div>  
             </section>
              </article>
-              : <div className="loading" role="alert"> 
-                    <div className="loading__content"> 
-                        <strong> Loading </strong>
-                        <span> Brewery Detail </span>
-                    </div> 
-                </div>}
+              : <Loading label="Loading" info="Brewery Detail" />}
             </main>
      </>
     )

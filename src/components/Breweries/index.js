@@ -2,30 +2,51 @@
 
 import { useState, useEffect } from "react";
 import Brewery from "../../components/Brewery"
+import Pagination from "../../components/Pagination"
 
  
 export default function Breweries(props){
     const [data, setData] = useState(null);
+    const [filterParam, setFilterParam] = useState(["All"]);
+    
+    const menuItems = [...new Set(data?.map((item) => item.brewery_type))];
+
+    // a new state variable called "currentPage"  
+    const [currentPage, setCurrentPage] = useState(1);
+
+    // define quantidade de posts por página.
+    const breweryPerPage = 12;
+
+
+    const [maxPageLimit, setMaxPageLimit] = useState(5);
+    const [minPageLimit, setMinPageLimit] = useState(0);
+
+
     
     useEffect(() => {
-        fetch("https://api.openbrewerydb.org/breweries")
+        fetch(`https://api.openbrewerydb.org/breweries?page=${currentPage}&per_page=${breweryPerPage}`)
         .then((response) => response.json())
         .then((data) => setData(data));
-    }, []);
+    }, [currentPage]);
     
     //console.log(data)
 
- 
-    const [filterParam, setFilterParam] = useState(["All"]);
-    const menuItems = [...new Set(data?.map((item) => item.brewery_type))];
- 
+
+    const paginationAttributes = {
+        currentPage,
+        maxPageLimit,
+        minPageLimit,
+        response: data,
+      };
+
+      
     return (
 <>
 
-{/* {menuItems} */}
-{filterParam}
+ {filterParam}
         <section onChange={(e) => {
                 setFilterParam(e.target.value);
+                
               }}
             className="filter">
                <strong>  Filter:  </strong>
@@ -54,22 +75,16 @@ export default function Breweries(props){
         ))}  
     </ul>
     
-    : <h5> Loading Breweries </h5>}
-           
+    : <h5> Loading Breweries list</h5>} 
 
-            <nav className="pagination"> 
-                <ul className="pagination__list">
-                    <li className="pagination__item" href="#">
-                        <a href="./page-1" className="pagination__link active" aria-current="page"> 1 </a>
-                    </li>
-                    <li className="pagination__item" href="#">
-                        <a href="./page-2" className="pagination__link"> 2 </a>
-                    </li>
-                    <li className="pagination__item" href="#">
-                        <a href="./page-3" className="pagination__link"> 3 </a>
-                    </li>
-                </ul>
-            </nav>
+
+ 
+            <Pagination
+            {...paginationAttributes} 
+            // onPrevClick={onPrevClick} 
+            // onNextClick={onNextClick}
+            // onPageChange={onPageChange}
+            />
         </section> 
 
         </>
