@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 export default function Brewery({props}){
-    console.log("props: ", props)
+    // console.log("props: ", props)
 
     return (
         <li className="Breweries__listitem" id={props.id}> 
@@ -12,7 +12,7 @@ export default function Brewery({props}){
                     <Link to={`./detail/${props.id}`} className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></Link>
                 </div>
                 <footer className="Brewery-card__footer">
-                    <span className="Brewery-card__tag ${props.brewery_type}"> {props.brewery_type} </span>
+                    <span className={`Brewery-card__tag Brewery-card__tag--${props.brewery_type}`}> {props.brewery_type.charAt(0).toUpperCase() + props.brewery_type.slice(1)} </span>
                 </footer>
             </section>
         </li>

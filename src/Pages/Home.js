@@ -6,8 +6,8 @@ export default function Home(){
     return (
         <div>
             <Header />
-            <Filter />
-            <Breweries />
+            {/* <Filter  /> */}
+            <Breweries  />
         </div>
     )
 }

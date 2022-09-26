@@ -16,6 +16,8 @@ body {
     font-family: 'Merriweather', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: all 0.2s linear;
+
 }
 
 code {
@@ -24,7 +26,7 @@ code {
 }
 
 .single{}
-.single__content{ padding: 50px}
+.single__content{ padding: 20px}
 
 
 
@@ -79,13 +81,23 @@ header h2 {margin: 0; font-size: 1.2em; font-weight: 400;}
   display: initial;
   margin:0;
  }
-.Brewery-card{box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;   
+.Brewery-card{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;   
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   position:relative;
 }
+
+.Brewery-card:focus-within {
+  box-shadow: rgba(99, 99, 99, 0.4) 0px 4px 8px 0px;   
+}
+
+.Brewery-card__top{
+  display: flex;
+   padding: 3px
+  }
 .Brewery-card__content{
   padding: 30px 20px; 
 }
@@ -107,21 +119,34 @@ header h2 {margin: 0; font-size: 1.2em; font-weight: 400;}
   top: 0;
   left: 0;
   cursor: pointer;
+   transition: all 0.2s linear;
 }
+
+.Brewery-card__stretched-link:hover{
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+
 .Brewery-card__footer{
-  border-top: 1px solid #5FCEB4;
+  border-top: 1px solid #5fceb461;
   padding: 10px 20px;
 }
 .Brewery-card__tag{
-  background: #5FCEB4;
+  background: #49a18c;
   border-radius: 5px;
   padding: 5px 10px;
   color: #fff;
   font-size: 0.8em;
+  font-weight: 900;
 }
 
-
-
+/* http://web-accessibility.carnegiemuseums.org/design/color/ */
+.Brewery-card__tag--large{background: rgb(49 115 220); color: #fff}
+.Brewery-card__tag--micro{background: #6C6C6C}
+.Brewery-card__tag--brewpub{ background: rgb(255 221 87); color: rgb(76 65 25)}
+.Brewery-card__tag--closed{background: #cd2026}
+.Brewery-card__tag--regional{background: rgb(49 115 220)}
+.Brewery-card__tag--contract{background: rgb(54 54 54)}
 
 
 .pagination{ display: flex; justify-content: center;}
@@ -147,3 +172,39 @@ header h2 {margin: 0; font-size: 1.2em; font-weight: 400;}
   background: #262324;
   color: #fff;
 }
+
+
+
+.goto_back{ padding: 0 20px}
+.goto_back__link{ 
+  text-decoration: none;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  color: #262324;
+
+}
+.goto_back__text{
+  padding-top: 0.25em;
+}
+.goto_back__link::before{  
+  /* https://css-tricks.com/snippets/html/glyphs/ */
+  content: '\2039';
+  font-size: 1.9em;
+  margin-right:0.3em;
+}
+
+
+
+
+.loading{
+  display: flex;
+  min-height: 40vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center
+}
+.loading__content{}
+.loading__content strong{ display: flex}
+.loading__content span{ font-size: 1.4em}
