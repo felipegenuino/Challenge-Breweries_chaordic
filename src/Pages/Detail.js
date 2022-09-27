@@ -41,11 +41,11 @@ function formatPhoneNumber(phoneNumberString) {
         </section>
         {data ?  
           <article className="single__content">
-             <section className={`Brewery-card`}> 
-              <div  className={`Brewery-card__top Brewery-card__tag--${data?.brewery_type}`}></div>
-                <div className="Brewery-card__content">
-                    <h3 className="Brewery-card__title"> {data?.name} </h3>
-                    <ul  className="Brewery-card__list"> 
+             <section className={`single__card`}> 
+              <div  className={`single__card__top single__card__tag--${data?.brewery_type}`}></div>
+                <div className="single__card__content">
+                    <h3 className="single__card__title"> {data?.name} </h3>
+                    <ul  className="single__card__list" aria-label="More details"> 
                         <li>  <strong> Type: </strong>  {data?.brewery_type ? data.brewery_type.charAt(0).toUpperCase() + data.brewery_type.slice(1) : 'Não cadastrado'} </li>
                         <li>  <strong> Street: </strong>  {data?.street ? data.street : 'Não cadastrado'} </li>
                         <li>  <strong> City: </strong>   {data?.city ? data.city : 'Não cadastrado'} </li>

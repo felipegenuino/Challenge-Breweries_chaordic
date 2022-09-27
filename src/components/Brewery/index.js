@@ -1,18 +1,24 @@
 import { Link } from 'react-router-dom';
+import styles from './index.module.css'; 
 
+ 
 export default function Brewery({props}){
     // console.log("props: ", props)
-
+   const type = 'tag_' + props.brewery_type;
     return (
-        <li className="Breweries__listitem" id={props.id}> 
-            <section className="Brewery-card">
-                <div className="Brewery-card__content">
-                    <h3 className="Brewery-card__title"> {props.id} </h3>
-                    <p  className="Brewery-card__info"> <span> {props.street} </span> <br /> {props.city} {props.state} - {props.phone}  <br /> {props.country}</p> 
-                    <Link to={`./detail/${props.id}`} className="Brewery-card__stretched-link" aria-label="ir para  Avondale Brewing Co"></Link>
+        <li className={styles.listitem} id={props.id}> 
+            <section className={styles.card}>
+                <div className={styles.card__content} >
+                    <h3 className={styles.card__title}> {props.name} </h3>
+                    <p className={styles.card__info}> <span> {props.street} </span> <br /> {props.city} {props.state} - {props.phone}  <br /> {props.country}</p> 
+                    <Link to={`./detail/${props.id}`} className={styles.card__stretchedLink} aria-label="ir para  Avondale Brewing Co"></Link>
                 </div>
-                <footer className="Brewery-card__footer">
-                    <span className={`Brewery-card__tag Brewery-card__tag--${props.brewery_type}`}> {props.brewery_type.charAt(0).toUpperCase() + props.brewery_type.slice(1)} </span>
+                <footer className={styles.card__footer}>
+
+                    <span className={` ${styles.tag} ${type}  ` } > 
+                        {props.brewery_type.charAt(0).toUpperCase() + props.brewery_type.slice(1)} 
+                    </span>
+
                 </footer>
             </section>
         </li>

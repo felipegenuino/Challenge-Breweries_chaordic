@@ -1,0 +1,27 @@
+.pagination{ display: flex; justify-content: center;}
+.pagination__list{ list-style: none; display: flex; padding: 0}
+.pagination__item{}
+
+.pagination__button{
+    border: 1px solid #5FCEB4;
+    padding: 8px 14px;
+    display: flex;
+    margin-right: 5px;
+    border-radius: 5px;
+    color: #262324;
+    text-decoration: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+.pagination__button:hover{
+  opacity:0.8;
+}
+
+.pagination__active{
+  background: #262324;
+  color: #fff;
+  cursor: unset;
+}
+.pagination__active:hover{
+  opacity:1;
+}

@@ -1,23 +1,24 @@
+import styles from './index.module.css'; 
+
+
 export default function Pagination(props){
     const { currentPage, maxPageLimit, minPageLimit} = props;
      const totalPages = props.response;
  
   
-
-
 console.log('pagination props', props.response)
 
     return (
-        <nav className="pagination">   
-                <ul className="pagination__list">
-                    <li className="pagination__item" href="#">
-                        <button className="pagination__link active" aria-current="page" > 1 </button>
+        <nav className={styles.pagination}>   
+                <ul className={styles.pagination__list}>
+                    <li className={styles.pagination__item}>
+                        <button className={`${styles.pagination__button} ${styles.pagination__active} `}  aria-current="page" > 1 </button>
                     </li>
-                    <li className="pagination__item" href="#">
-                        <a href="./page-2" className="pagination__link"> 2 </a>
+                    <li className={styles.pagination__item} >
+                        <button className={styles.pagination__button}> 2 </button>
                     </li>
-                    <li className="pagination__item" href="#">
-                        <a href="./page-3" className="pagination__link"> 3 </a>
+                    <li className={styles.pagination__item} >
+                        <button className={styles.pagination__button} > 3 </button>
                     </li>
                 </ul>
             </nav>

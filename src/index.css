@@ -27,6 +27,27 @@ code {
 
 .single{}
 .single__content{ padding: 20px}
+.single__card{   
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;   
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position:relative;
+}
+
+.single__card:focus-within {
+  box-shadow: rgba(99, 99, 99, 0.4) 0px 4px 8px 0px;   
+}
+
+
+.single__card__top{ display: flex; padding: 3px}
+.single__card__content{ padding: 30px 20px; }
+.single__card__title{ font-size: 2.5em; margin:0}
+.single__card__info{ font-size: 1.1em; line-height: 1.8}
+.single__card__list{ font-size: 1.1em; line-height: 1.8; list-style:none; padding:0;}
+
+
 
 
 
@@ -81,102 +102,6 @@ header h2 {margin: 0; font-size: 1.2em; font-weight: 400;}
   display: initial;
   margin:0;
  }
-.Brewery-card{
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;   
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  position:relative;
-}
-
-.Brewery-card:focus-within {
-  box-shadow: rgba(99, 99, 99, 0.4) 0px 4px 8px 0px;   
-}
-
-.Brewery-card__top{
-  display: flex;
-   padding: 3px
-  }
-.Brewery-card__content{
-  padding: 30px 20px; 
-}
-.Brewery-card__title{ font-size: 2.5em; margin:0}
-.Brewery-card__info{ font-size: 1.1em; line-height: 1.8}
-
-.Brewery-card__list{ 
-  font-size: 1.1em; 
-  line-height: 1.8; 
-  list-style:none; 
-  padding:0
-}
-
-.Brewery-card__stretched-link{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  top: 0;
-  left: 0;
-  cursor: pointer;
-   transition: all 0.2s linear;
-}
-
-.Brewery-card__stretched-link:hover{
-  outline: -webkit-focus-ring-color auto 1px;
-}
-
-
-.Brewery-card__footer{
-  border-top: 1px solid #5fceb461;
-  padding: 10px 20px;
-}
-.Brewery-card__tag{
-  background: #49a18c;
-  border-radius: 5px;
-  padding: 5px 10px;
-  color: #fff;
-  font-size: 0.8em;
-  font-weight: 900;
-}
-
-/* http://web-accessibility.carnegiemuseums.org/design/color/ */
-.Brewery-card__tag--micro{background: #6C6C6C}
-.Brewery-card__tag--nano{background: #c50e29; color:#fff;}
-.Brewery-card__tag--regional{background: rgb(49 115 220)}
-.Brewery-card__tag--brewpub{ background: rgb(255 221 87); color: rgb(76 65 25)}
-.Brewery-card__tag--large{background: rgb(49 115 220); color: #fff}
-.Brewery-card__tag--planning{background: #6200ea; color: #fff;}
-.Brewery-card__tag--bar{background: #9eea35;}
-.Brewery-card__tag--contract{background: rgb(54 54 54)}
-.Brewery-card__tag--proprietor{background: #665f46; color: #fff;}
-.Brewery-card__tag--closed{background: #cd2026}
-
-
-
-.pagination{ display: flex; justify-content: center;}
-.pagination__list{ list-style: none; display: flex; padding: 0}
-.pagination__item{}
-
-.pagination__link{
-    border: 1px solid #5FCEB4;
-    padding: 8px 14px;
-    display: flex;
-    margin-right: 5px;
-    border-radius: 5px;
-    /* background: var(--background-header); */
-    color: #262324;
-    text-decoration: none;
-    font-size: 1.2em;
-}
-.pagination__link:hover{
-  opacity:0.9
-}
-
-.pagination__link.active{
-  background: #262324;
-  color: #fff;
-}
 
 
 
@@ -200,3 +125,19 @@ header h2 {margin: 0; font-size: 1.2em; font-weight: 400;}
 }
 
 
+
+
+
+
+/* Infelizmente não consegui colocar no index.module.css*/
+/* http://web-accessibility.carnegiemuseums.org/design/color/ */
+.tag_micro{background-color: #6C6C6C !important}
+.tag_nano{background-color: #c50e29 !important; color:#fff !important; }
+.tag_regional{background-color: rgb(49 115 220) !important; }
+.tag_brewpub{ background-color: rgb(255 221 87) !important; color: rgb(76 65 25)!important; }
+.tag_large{background-color: rgb(49 115 220) !important; ; color: #fff !important; }
+.tag_planning{background-color: #6200ea !important; color: #fff !important; }
+.tag_bar{background-color: #9eea35 !important; }
+.tag_contract{background-color: rgb(54 54 54) !important; }
+.tag_proprietor{background-color: #665f46 !important;  color: #fff !important; }
+.tag_closed{background-color: #cd2026 !important; }
